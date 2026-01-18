@@ -1,77 +1,45 @@
-import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { trpc } from "@/lib/trpc";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 
 export default function Onboarding() {
-  const { user, loading } = useAuth();
   const [agreedToTerms, setAgreedToTerms] = useState(false);
-
-  const updateOnboarding = trpc.auth.updateOnboarding.useMutation({
-    onSuccess: () => {
-      // Force full page reload to ensure auth state is refreshed
-      window.location.href = "/training";
-    },
-  });
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
-      </div>
-    );
-  }
-
-  if (!user) {
-    return (
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Authentication Required</CardTitle>
-            <CardDescription>Please log in to continue</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link href="/">
-              <Button>Go to Home</Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
-  // If already completed onboarding, show message with link
-  if (user.agreedToTerms && user.status === "active") {
-    return (
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Onboarding Complete</CardTitle>
-            <CardDescription>You've already completed the onboarding process</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link href="/training">
-              <Button>Go to Training</Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [, setLocation] = useLocation();
 
   const handleSubmit = () => {
     if (agreedToTerms) {
-      updateOnboarding.mutate({
-        agreedToTerms: true,
-        agreedToBaa: true,
-        status: "active",
-      });
+      setIsSubmitting(true);
+      // Store agreement in localStorage for now (no auth)
+      localStorage.setItem("soundbridge_agreed_to_terms", "true");
+      // Redirect to training
+      setTimeout(() => {
+        setLocation("/training");
+      }, 500);
     }
   };
+
+  // Check if already agreed
+  const alreadyAgreed = localStorage.getItem("soundbridge_agreed_to_terms") === "true";
+  
+  if (alreadyAgreed) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>Already Completed</CardTitle>
+            <CardDescription>You have already agreed to the Terms of Service</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button onClick={() => setLocation("/training")}>Go to Training</Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
@@ -121,7 +89,7 @@ export default function Onboarding() {
 
                 <h3 className="font-semibold text-foreground">7. Indemnification</h3>
                 <p>
-                  You agree to indemnify, defend, and hold harmless SoundBridge Health, its officers, directors, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from: (a) your use of the training portal and materials; (b) your provision of services as a certified facilitator; (c) your violation of these Terms of Service; (d) your violation of any third-party rights, including intellectual property rights or privacy rights; or (e) any negligent or wrongful conduct on your part.
+                  You agree to indemnify, defend, and hold harmless SoundBridge Health, its officers, directors, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable attorneys fees) arising from: (a) your use of the training portal and materials; (b) your provision of services as a certified facilitator; (c) your violation of these Terms of Service; (d) your violation of any third-party rights, including intellectual property rights or privacy rights; or (e) any negligent or wrongful conduct on your part.
                 </p>
               </div>
             </div>
@@ -142,15 +110,13 @@ export default function Onboarding() {
           </CardContent>
         </Card>
 
-
-
         <div className="flex justify-end">
           <Button
             size="lg"
             onClick={handleSubmit}
-            disabled={!agreedToTerms || updateOnboarding.isPending}
+            disabled={!agreedToTerms || isSubmitting}
           >
-            {updateOnboarding.isPending ? (
+            {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Processing...

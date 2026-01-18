@@ -1,4 +1,3 @@
-import { useAuth } from "@/_core/hooks/useAuth";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,8 +9,17 @@ import Header from "@/components/Header";
 import { ProfileCompletenessBanner } from "@/components/ProfileCompletenessBanner";
 import { toast } from "sonner";
 
+// Mock user for public access (auth removed)
+const user = {
+  id: 1,
+  name: "Demo Trainee",
+  email: "demo@soundbridge.health",
+  role: "trainee",
+  status: "active",
+  agreedToTerms: true,
+};
+
 export default function Training() {
-  const { user, loading } = useAuth();
   const [, setLocation] = useLocation();
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
@@ -21,46 +29,6 @@ export default function Training() {
   const { data: userLiveClasses } = trpc.liveClasses.myClasses.useQuery();
   const { data: profileCheck } = trpc.profileCompleteness.check.useQuery();
   const { data: completeness } = trpc.profileCompleteness.getCompleteness.useQuery();
-
-  if (loading) {
-    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
-  }
-
-  if (!user) {
-    return (
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Authentication Required</CardTitle>
-            <CardDescription>Please log in to continue</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link href="/">
-              <Button>Go to Home</Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
-  if (!user.agreedToTerms || user.status !== "active") {
-    return (
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Onboarding Required</CardTitle>
-            <CardDescription>Please complete the onboarding process to access training</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link href="/onboarding">
-              <Button>Complete Onboarding</Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
 
   const getModuleProgress = (moduleId: number) => {
     return allProgress?.find((p) => p.moduleId === moduleId);

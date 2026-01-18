@@ -1,4 +1,4 @@
-import { useAuth } from "@/_core/hooks/useAuth";
+// Auth removed - using mock user
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -22,7 +22,7 @@ import { KeyRound } from "lucide-react";
 import { getLoginUrl } from "@/const";
 
 export default function Home() {
-  const { user } = useAuth();
+  const user = { id: 1, name: "Demo Trainee" }; // Mock user - auth removed
   const [, setLocation] = useLocation();
 
   return (

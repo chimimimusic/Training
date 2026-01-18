@@ -1,4 +1,4 @@
-import { useAuth } from "@/_core/hooks/useAuth";
+// Auth removed - using mock user
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -21,7 +21,7 @@ import {
 import { useLocation } from "wouter";
 
 export default function Header() {
-  const { user } = useAuth();
+  const user = { id: 1, name: "Demo Trainee", role: "trainee" }; // Mock user
   const [, setLocation] = useLocation();
   const logout = trpc.auth.logout.useMutation({
     onSuccess: () => {
