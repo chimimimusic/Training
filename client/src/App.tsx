@@ -40,7 +40,7 @@ import AssessmentResult from "./pages/AssessmentResult";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={PublicHome} />
+      <Route path="/" component={Home} />
       <Route path="/home" component={Home} />
       <Route path="/patient-intake" component={PatientIntakeLanding} />
       <Route path="/portals" component={PortalSelection} />
