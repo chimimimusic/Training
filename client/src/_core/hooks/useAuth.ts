@@ -8,6 +8,22 @@ type UseAuthOptions = {
   redirectPath?: string;
 };
 
+// Mock user for bypassing auth during development/demo
+const MOCK_USER = {
+  id: 1,
+  openId: "demo-user",
+  name: "Demo Trainee",
+  email: "demo@soundbridge.health",
+  role: "trainee",
+  status: "active",
+  agreedToTerms: true,
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// Set to true to bypass authentication
+const BYPASS_AUTH = true;
+
 export function useAuth(options?: UseAuthOptions) {
   const { redirectOnUnauthenticated = false, redirectPath = getLoginUrl() } =
     options ?? {};
@@ -16,6 +32,7 @@ export function useAuth(options?: UseAuthOptions) {
   const meQuery = trpc.auth.me.useQuery(undefined, {
     retry: false,
     refetchOnWindowFocus: false,
+    enabled: !BYPASS_AUTH, // Don't query if bypassing auth
   });
 
   const logoutMutation = trpc.auth.logout.useMutation({
@@ -25,6 +42,10 @@ export function useAuth(options?: UseAuthOptions) {
   });
 
   const logout = useCallback(async () => {
+    if (BYPASS_AUTH) {
+      console.log("[Auth] Logout called but auth is bypassed");
+      return;
+    }
     try {
       await logoutMutation.mutateAsync();
     } catch (error: unknown) {
@@ -42,6 +63,20 @@ export function useAuth(options?: UseAuthOptions) {
   }, [logoutMutation, utils]);
 
   const state = useMemo(() => {
+    // If bypassing auth, return mock user
+    if (BYPASS_AUTH) {
+      localStorage.setItem(
+        "manus-runtime-user-info",
+        JSON.stringify(MOCK_USER)
+      );
+      return {
+        user: MOCK_USER,
+        loading: false,
+        error: null,
+        isAuthenticated: true,
+      };
+    }
+
     localStorage.setItem(
       "manus-runtime-user-info",
       JSON.stringify(meQuery.data)
@@ -61,6 +96,7 @@ export function useAuth(options?: UseAuthOptions) {
   ]);
 
   useEffect(() => {
+    if (BYPASS_AUTH) return; // Skip redirect when bypassing
     if (!redirectOnUnauthenticated) return;
     if (meQuery.isLoading || logoutMutation.isPending) return;
     if (state.user) return;
@@ -78,7 +114,7 @@ export function useAuth(options?: UseAuthOptions) {
 
   return {
     ...state,
-    refresh: () => meQuery.refetch(),
+    refresh: () => BYPASS_AUTH ? Promise.resolve() : meQuery.refetch(),
     logout,
   };
 }
