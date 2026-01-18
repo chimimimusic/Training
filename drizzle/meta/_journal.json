@@ -1,0 +1,146 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1767469320430,
+      "tag": "0000_rare_blindfold",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1767469426862,
+      "tag": "0001_giant_the_watchers",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1767487810600,
+      "tag": "0002_flashy_pandemic",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1767494353099,
+      "tag": "0003_fresh_chronomancer",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1767494897717,
+      "tag": "0004_amazing_thaddeus_ross",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1767496471924,
+      "tag": "0005_many_nightmare",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1767497819625,
+      "tag": "0006_dear_callisto",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1767498326984,
+      "tag": "0007_clever_marrow",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1767534830569,
+      "tag": "0008_familiar_starjammers",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1767536203277,
+      "tag": "0009_young_violations",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1767548337958,
+      "tag": "0010_sturdy_random",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1767565918676,
+      "tag": "0011_right_bloodscream",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "5",
+      "when": 1767568043508,
+      "tag": "0012_modern_korvac",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "5",
+      "when": 1767568188727,
+      "tag": "0013_premium_shockwave",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "5",
+      "when": 1767571811073,
+      "tag": "0014_tense_forgotten_one",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "5",
+      "when": 1767578628901,
+      "tag": "0015_minor_tag",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "5",
+      "when": 1767614868002,
+      "tag": "0016_dear_moira_mactaggert",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "5",
+      "when": 1767915667658,
+      "tag": "0017_mute_blade",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "5",
+      "when": 1768138124554,
+      "tag": "0018_ambiguous_lord_tyger",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "5",
+      "when": 1768139303024,
+      "tag": "0019_common_fat_cobra",
+      "breakpoints": true
+    }
+  ]
+}

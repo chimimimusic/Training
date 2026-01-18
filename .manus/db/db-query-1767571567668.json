@@ -1,0 +1,64 @@
+{
+  "query": "SELECT id, moduleNumber, title, youtubeVideoId FROM modules ORDER BY orderIndex",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title, youtubeVideoId FROM modules ORDER BY orderIndex",
+  "rows": [
+    {
+      "id": "1",
+      "moduleNumber": "1",
+      "title": "Session 1: Introduction to SoundBridge Health",
+      "youtubeVideoId": "iwPnLcsSkqc"
+    },
+    {
+      "id": "3",
+      "moduleNumber": "2",
+      "title": "Session 1B: Understanding Anxiety and Depression",
+      "youtubeVideoId": "SWPSDYx3Xes"
+    },
+    {
+      "id": "4",
+      "moduleNumber": "3",
+      "title": "Session 3: The SoundBridge Health Protocol",
+      "youtubeVideoId": "fpLFg6j5neo"
+    },
+    {
+      "id": "5",
+      "moduleNumber": "4",
+      "title": "Session 4: Building Therapeutic Playlists",
+      "youtubeVideoId": "rv9mKx2QCdE"
+    },
+    {
+      "id": "6",
+      "moduleNumber": "5",
+      "title": "Session 5: Facilitating Group Sessions",
+      "youtubeVideoId": "-4AdTnf2FBY"
+    },
+    {
+      "id": "7",
+      "moduleNumber": "6",
+      "title": "Session 6: Managing Patient Progress",
+      "youtubeVideoId": "_oWrYJt-zQ8"
+    },
+    {
+      "id": "8",
+      "moduleNumber": "7",
+      "title": "Session 7: Handling Difficult Situations",
+      "youtubeVideoId": "mdOXrGSbNkc"
+    },
+    {
+      "id": "9",
+      "moduleNumber": "8",
+      "title": "Session 8: Documentation and Compliance",
+      "youtubeVideoId": "ciFoGuKcQQU"
+    },
+    {
+      "id": "10",
+      "moduleNumber": "9",
+      "title": "Session 9: Certification and Next Steps",
+      "youtubeVideoId": "_4d05Mp6_ZE"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\tyoutubeVideoId\n1\t1\tSession 1: Introduction to SoundBridge Health\tiwPnLcsSkqc\n3\t2\tSession 1B: Understanding Anxiety and Depression\tSWPSDYx3Xes\n4\t3\tSession 3: The SoundBridge Health Protocol\tfpLFg6j5neo\n5\t4\tSession 4: Building Therapeutic Playlists\trv9mKx2QCdE\n6\t5\tSession 5: Facilitating Group Sessions\t-4AdTnf2FBY\n7\t6\tSession 6: Managing Patient Progress\t_oWrYJt-zQ8\n8\t7\tSession 7: Handling Difficult Situations\tmdOXrGSbNkc\n9\t8\tSession 8: Documentation and Compliance\tciFoGuKcQQU\n10\t9\tSession 9: Certification and Next Steps\t_4d05Mp6_ZE\n",
+  "stderr": "",
+  "execution_time_ms": 73
+}

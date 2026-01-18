@@ -1,0 +1,60 @@
+{
+  "query": "SELECT id, title, CHAR_LENGTH(transcriptContent) as transcript_length FROM modules ORDER BY id",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, title, CHAR_LENGTH(transcriptContent) as transcript_length FROM modules ORDER BY id",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Session 1: Introduction to SoundBridge Health",
+      "transcript_length": "8283"
+    },
+    {
+      "id": "3",
+      "title": "Session 1B: Understanding Anxiety and Depression",
+      "transcript_length": "5588"
+    },
+    {
+      "id": "4",
+      "title": "Session 2: Cognitive Behavioral Therapy Foundations",
+      "transcript_length": "7645"
+    },
+    {
+      "id": "5",
+      "title": "Session 4: Building Therapeutic Playlists",
+      "transcript_length": "4872"
+    },
+    {
+      "id": "6",
+      "title": "Session 5: Facilitating Group Sessions",
+      "transcript_length": "8775"
+    },
+    {
+      "id": "7",
+      "title": "Session 6: Managing Patient Progress",
+      "transcript_length": "6057"
+    },
+    {
+      "id": "8",
+      "title": "Session 7: Handling Difficult Situations",
+      "transcript_length": "7675"
+    },
+    {
+      "id": "9",
+      "title": "Session 8: Documentation and Compliance",
+      "transcript_length": "7395"
+    },
+    {
+      "id": "10",
+      "title": "Session 9: Certification and Next Steps",
+      "transcript_length": "6764"
+    },
+    {
+      "id": "30001",
+      "title": "Session 9: Program Evaluation and Sustainability",
+      "transcript_length": "145"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\ttranscript_length\n1\tSession 1: Introduction to SoundBridge Health\t8283\n3\tSession 1B: Understanding Anxiety and Depression\t5588\n4\tSession 2: Cognitive Behavioral Therapy Foundations\t7645\n5\tSession 4: Building Therapeutic Playlists\t4872\n6\tSession 5: Facilitating Group Sessions\t8775\n7\tSession 6: Managing Patient Progress\t6057\n8\tSession 7: Handling Difficult Situations\t7675\n9\tSession 8: Documentation and Compliance\t7395\n10\tSession 9: Certification and Next Steps\t6764\n30001\tSession 9: Program Evaluation and Sustainability\t145\n",
+  "stderr": "",
+  "execution_time_ms": 51
+}

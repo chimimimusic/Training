@@ -1,0 +1,180 @@
+{
+  "query": "SELECT ue.id, ue.userId, u.email, ue.jobTitle, ue.employer, ue.startDate, ue.endDate, ue.isCurrentJob FROM userEmployment ue JOIN users u ON ue.userId = u.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT ue.id, ue.userId, u.email, ue.jobTitle, ue.employer, ue.startDate, ue.endDate, ue.isCurrentJob FROM userEmployment ue JOIN users u ON ue.userId = u.id;",
+  "rows": [
+    {
+      "id": "2",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Senior Therapist",
+      "employer": "XYZ Mental Health",
+      "startDate": "2024-01",
+      "endDate": "NULL",
+      "isCurrentJob": "1"
+    },
+    {
+      "id": "3",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Test Job",
+      "employer": "Test Employer",
+      "startDate": "2020-01",
+      "endDate": "NULL",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "4",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "",
+      "employer": "Test Employer",
+      "startDate": "2020-01",
+      "endDate": "NULL",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "5",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Clinical Social Worker",
+      "employer": "ABC Healthcare",
+      "startDate": "2020-01",
+      "endDate": "2023-12",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Senior Therapist",
+      "employer": "XYZ Mental Health",
+      "startDate": "2024-01",
+      "endDate": "NULL",
+      "isCurrentJob": "1"
+    },
+    {
+      "id": "7",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Test Job",
+      "employer": "Test Employer",
+      "startDate": "2020-01",
+      "endDate": "NULL",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "8",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Test Job",
+      "employer": "Test Employer",
+      "startDate": "2020-01",
+      "endDate": "NULL",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "30001",
+      "userId": "240045",
+      "email": "chris@cbmg.enterprises",
+      "jobTitle": "physician",
+      "employer": "Heritage Medical Associates",
+      "startDate": "2005-01",
+      "endDate": "2010-01",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "60001",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Clinical Social Worker",
+      "employer": "ABC Healthcare",
+      "startDate": "2020-01",
+      "endDate": "2023-12",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "60002",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Senior Therapist",
+      "employer": "XYZ Mental Health",
+      "startDate": "2024-01",
+      "endDate": "NULL",
+      "isCurrentJob": "1"
+    },
+    {
+      "id": "60003",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Test Job",
+      "employer": "Test Employer",
+      "startDate": "2020-01",
+      "endDate": "NULL",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "60004",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Test Job",
+      "employer": "Test Employer",
+      "startDate": "2020-01",
+      "endDate": "NULL",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "60005",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Clinical Social Worker",
+      "employer": "ABC Healthcare",
+      "startDate": "2020-01",
+      "endDate": "2023-12",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "60006",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Senior Therapist",
+      "employer": "XYZ Mental Health",
+      "startDate": "2024-01",
+      "endDate": "NULL",
+      "isCurrentJob": "1"
+    },
+    {
+      "id": "60007",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Test Job",
+      "employer": "Test Employer",
+      "startDate": "2020-01",
+      "endDate": "NULL",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "60008",
+      "userId": "1",
+      "email": "chrisb@soundbridgehealth.com",
+      "jobTitle": "Test Job",
+      "employer": "Test Employer",
+      "startDate": "2020-01",
+      "endDate": "NULL",
+      "isCurrentJob": "0"
+    },
+    {
+      "id": "60009",
+      "userId": "870385",
+      "email": "soundbridgeimplementation@gmail.com",
+      "jobTitle": "sdf",
+      "employer": "healthcare",
+      "startDate": "2017-01",
+      "endDate": "NULL",
+      "isCurrentJob": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tuserId\temail\tjobTitle\temployer\tstartDate\tendDate\tisCurrentJob\n2\t1\tchrisb@soundbridgehealth.com\tSenior Therapist\tXYZ Mental Health\t2024-01\tNULL\t1\n3\t1\tchrisb@soundbridgehealth.com\tTest Job\tTest Employer\t2020-01\tNULL\t0\n4\t1\tchrisb@soundbridgehealth.com\t\tTest Employer\t2020-01\tNULL\t0\n5\t1\tchrisb@soundbridgehealth.com\tClinical Social Worker\tABC Healthcare\t2020-01\t2023-12\t0\n6\t1\tchrisb@soundbridgehealth.com\tSenior Therapist\tXYZ Mental Health\t2024-01\tNULL\t1\n7\t1\tchrisb@soundbridgehealth.com\tTest Job\tTest Employer\t2020-01\tNULL\t0\n8\t1\tchrisb@soundbridgehealth.com\tTest Job\tTest Employer\t2020-01\tNULL\t0\n30001\t240045\tchris@cbmg.enterprises\tphysician\tHeritage Medical Associates\t2005-01\t2010-01\t0\n60001\t1\tchrisb@soundbridgehealth.com\tClinical Social Worker\tABC Healthcare\t2020-01\t2023-12\t0\n60002\t1\tchrisb@soundbridgehealth.com\tSenior Therapist\tXYZ Mental Health\t2024-01\tNULL\t1\n60003\t1\tchrisb@soundbridgehealth.com\tTest Job\tTest Employer\t2020-01\tNULL\t0\n60004\t1\tchrisb@soundbridgehealth.com\tTest Job\tTest Employer\t2020-01\tNULL\t0\n60005\t1\tchrisb@soundbridgehealth.com\tClinical Social Worker\tABC Healthcare\t2020-01\t2023-12\t0\n60006\t1\tchrisb@soundbridgehealth.com\tSenior Therapist\tXYZ Mental Health\t2024-01\tNULL\t1\n60007\t1\tchrisb@soundbridgehealth.com\tTest Job\tTest Employer\t2020-01\tNULL\t0\n60008\t1\tchrisb@soundbridgehealth.com\tTest Job\tTest Employer\t2020-01\tNULL\t0\n60009\t870385\tsoundbridgeimplementation@gmail.com\tsdf\thealthcare\t2017-01\tNULL\t1\n",
+  "stderr": "",
+  "execution_time_ms": 402
+}

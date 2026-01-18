@@ -1,0 +1,28 @@
+{
+  "query": "SELECT id, questionNumber, questionText, correctAnswer FROM assessments WHERE moduleId = 8 ORDER BY questionNumber LIMIT 3",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, questionNumber, questionText, correctAnswer FROM assessments WHERE moduleId = 8 ORDER BY questionNumber LIMIT 3",
+  "rows": [
+    {
+      "id": "120013",
+      "questionNumber": "1",
+      "questionText": "What transformation occurs for participants in Session 8?",
+      "correctAnswer": "2"
+    },
+    {
+      "id": "120014",
+      "questionNumber": "2",
+      "questionText": "What type of facilitator energy does Session 8 require?",
+      "correctAnswer": "1"
+    },
+    {
+      "id": "120015",
+      "questionNumber": "3",
+      "questionText": "When participants reflect on breathing experiences, what should facilitators listen for?",
+      "correctAnswer": "2"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tquestionNumber\tquestionText\tcorrectAnswer\n120013\t1\tWhat transformation occurs for participants in Session 8?\t2\n120014\t2\tWhat type of facilitator energy does Session 8 require?\t1\n120015\t3\tWhen participants reflect on breathing experiences, what should facilitators listen for?\t2\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}

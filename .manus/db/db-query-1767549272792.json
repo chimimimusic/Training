@@ -1,0 +1,20 @@
+{
+  "query": "SELECT id, moduleNumber, title FROM modules WHERE moduleNumber IN (2, 8)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title FROM modules WHERE moduleNumber IN (2, 8)",
+  "rows": [
+    {
+      "id": "2",
+      "moduleNumber": "2",
+      "title": "Understanding Anxiety and Depression"
+    },
+    {
+      "id": "8",
+      "moduleNumber": "8",
+      "title": "Handling Difficult Situations"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\n2\t2\tUnderstanding Anxiety and Depression\n8\t8\tHandling Difficult Situations\n",
+  "stderr": "",
+  "execution_time_ms": 90
+}

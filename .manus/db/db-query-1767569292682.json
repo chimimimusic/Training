@@ -1,0 +1,20 @@
+{
+  "query": "SELECT id, title, orderIndex FROM moduleSections WHERE moduleId = 1 ORDER BY orderIndex",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, title, orderIndex FROM moduleSections WHERE moduleId = 1 ORDER BY orderIndex",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Session 1A: Introduction to SoundBridge Health",
+      "orderIndex": "1"
+    },
+    {
+      "id": "2",
+      "title": "Session 1B: Understanding Anxiety and Depression",
+      "orderIndex": "2"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\torderIndex\n1\tSession 1A: Introduction to SoundBridge Health\t1\n2\tSession 1B: Understanding Anxiety and Depression\t2\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

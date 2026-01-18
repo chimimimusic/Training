@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE modules SET youtubeVideoId = CASE moduleNumber\n  WHEN 1 THEN 'iwPnLcsSkqc'\n  WHEN 2 THEN 'SWPSDYx3Xes'\n  WHEN 3 THEN 'fEEbuk-KnhM'\n  WHEN 4 THEN 'fpLFg6j5neo'\n  WHEN 5 THEN 'rv9mKx2QCdE'\n  WHEN 6 THEN '-4AdTnf2FBY'\n  WHEN 7 THEN '_oWrYJt-zQ8'\n  WHEN 8 THEN 'mdOXrGSbNkc'\n  WHEN 9 THEN 'ciFoGuKcQQU'\n  WHEN 10 THEN '_4d05Mp6_ZE'\nEND\nWHERE moduleNumber BETWEEN 1 AND 10",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute UPDATE modules SET youtubeVideoId = CASE moduleNumber\n  WHEN 1 THEN 'iwPnLcsSkqc'\n  WHEN 2 THEN 'SWPSDYx3Xes'\n  WHEN 3 THEN 'fEEbuk-KnhM'\n  WHEN 4 THEN 'fpLFg6j5neo'\n  WHEN 5 THEN 'rv9mKx2QCdE'\n  WHEN 6 THEN '-4AdTnf2FBY'\n  WHEN 7 THEN '_oWrYJt-zQ8'\n  WHEN 8 THEN 'mdOXrGSbNkc'\n  WHEN 9 THEN 'ciFoGuKcQQU'\n  WHEN 10 THEN '_4d05Mp6_ZE'\nEND\nWHERE moduleNumber BETWEEN 1 AND 10",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 68
+}

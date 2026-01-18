@@ -1,0 +1,70 @@
+{
+  "query": "SELECT id, moduleNumber, title, description FROM modules ORDER BY moduleNumber;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title, description FROM modules ORDER BY moduleNumber;",
+  "rows": [
+    {
+      "id": "1",
+      "moduleNumber": "1",
+      "title": "Introduction to SoundBridge Health Protocol",
+      "description": "Overview of the music-based intervention protocol, evidence base, and facilitator role"
+    },
+    {
+      "id": "2",
+      "moduleNumber": "2",
+      "title": "Understanding Anxiety and Depression",
+      "description": "Clinical foundations of anxiety and depression disorders"
+    },
+    {
+      "id": "3",
+      "moduleNumber": "3",
+      "title": "Music-Based Intervention Fundamentals",
+      "description": "The science behind music's impact on mental health and emotional regulation"
+    },
+    {
+      "id": "4",
+      "moduleNumber": "4",
+      "title": "Session Structure and Flow",
+      "description": "Detailed walkthrough of the 10-session protocol structure"
+    },
+    {
+      "id": "5",
+      "moduleNumber": "5",
+      "title": "Facilitation Techniques",
+      "description": "Core skills for effective virtual facilitation and patient engagement"
+    },
+    {
+      "id": "6",
+      "moduleNumber": "6",
+      "title": "Telehealth Best Practices",
+      "description": "Creating optimal virtual environments and managing technical challenges"
+    },
+    {
+      "id": "7",
+      "moduleNumber": "7",
+      "title": "Patient Assessment and Progress Tracking",
+      "description": "Monitoring patient outcomes and adjusting interventions"
+    },
+    {
+      "id": "8",
+      "moduleNumber": "8",
+      "title": "Handling Difficult Situations",
+      "description": "Crisis management, boundaries, and when to escalate care"
+    },
+    {
+      "id": "9",
+      "moduleNumber": "9",
+      "title": "Clinical Documentation and Compliance",
+      "description": "HIPAA compliance, documentation requirements, and BAA agreements"
+    },
+    {
+      "id": "10",
+      "moduleNumber": "10",
+      "title": "Certification and Next Steps",
+      "description": "Final assessment, certification process, and ongoing professional development"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\tdescription\n1\t1\tIntroduction to SoundBridge Health Protocol\tOverview of the music-based intervention protocol, evidence base, and facilitator role\n2\t2\tUnderstanding Anxiety and Depression\tClinical foundations of anxiety and depression disorders\n3\t3\tMusic-Based Intervention Fundamentals\tThe science behind music's impact on mental health and emotional regulation\n4\t4\tSession Structure and Flow\tDetailed walkthrough of the 10-session protocol structure\n5\t5\tFacilitation Techniques\tCore skills for effective virtual facilitation and patient engagement\n6\t6\tTelehealth Best Practices\tCreating optimal virtual environments and managing technical challenges\n7\t7\tPatient Assessment and Progress Tracking\tMonitoring patient outcomes and adjusting interventions\n8\t8\tHandling Difficult Situations\tCrisis management, boundaries, and when to escalate care\n9\t9\tClinical Documentation and Compliance\tHIPAA compliance, documentation requirements, and BAA agreements\n10\t10\tCertification and Next Steps\tFinal assessment, certification process, and ongoing professional development\n",
+  "stderr": "",
+  "execution_time_ms": 64
+}

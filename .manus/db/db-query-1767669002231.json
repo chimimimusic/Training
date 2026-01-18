@@ -1,0 +1,17 @@
+{
+  "query": "SELECT id, email, agreedToTerms, agreedToBaa, status FROM users WHERE email = 'soundbridgeimplementation@gmail.com'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, email, agreedToTerms, agreedToBaa, status FROM users WHERE email = 'soundbridgeimplementation@gmail.com'",
+  "rows": [
+    {
+      "id": "870029",
+      "email": "soundbridgeimplementation@gmail.com",
+      "agreedToTerms": "1",
+      "agreedToBaa": "0",
+      "status": "active"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\temail\tagreedToTerms\tagreedToBaa\tstatus\n870029\tsoundbridgeimplementation@gmail.com\t1\t0\tactive\n",
+  "stderr": "",
+  "execution_time_ms": 404
+}

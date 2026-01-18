@@ -1,0 +1,15 @@
+{
+  "query": "SELECT id, title, CHAR_LENGTH(transcriptContent) as transcript_length FROM modules WHERE id = 1",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, title, CHAR_LENGTH(transcriptContent) as transcript_length FROM modules WHERE id = 1",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Session 1: Introduction to SoundBridge Health",
+      "transcript_length": "4171"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\ttranscript_length\n1\tSession 1: Introduction to SoundBridge Health\t4171\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}

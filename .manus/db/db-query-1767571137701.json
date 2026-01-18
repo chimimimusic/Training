@@ -1,0 +1,15 @@
+{
+  "query": "SELECT id, moduleNumber, title FROM modules WHERE moduleNumber = 2",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title FROM modules WHERE moduleNumber = 2",
+  "rows": [
+    {
+      "id": "3",
+      "moduleNumber": "2",
+      "title": "Session 2: Music and the Brain"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\n3\t2\tSession 2: Music and the Brain\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}

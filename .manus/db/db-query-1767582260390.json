@@ -1,0 +1,28 @@
+{
+  "query": "SELECT \n  u.id, u.email, \n  (SELECT COUNT(*) FROM userEducation WHERE userId = u.id) as educationCount,\n  (SELECT COUNT(*) FROM userEmployment WHERE userId = u.id) as employmentCount\nFROM users u \nWHERE u.role='trainee' \nORDER BY u.createdAt DESC \nLIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT \n  u.id, u.email, \n  (SELECT COUNT(*) FROM userEducation WHERE userId = u.id) as educationCount,\n  (SELECT COUNT(*) FROM userEmployment WHERE userId = u.id) as employmentCount\nFROM users u \nWHERE u.role='trainee' \nORDER BY u.createdAt DESC \nLIMIT 5;",
+  "rows": [
+    {
+      "id": "511097",
+      "email": "rhsorbo@gmail.com",
+      "educationCount": "0",
+      "employmentCount": "0"
+    },
+    {
+      "id": "240045",
+      "email": "chris@cbmg.enterprises",
+      "educationCount": "2",
+      "employmentCount": "0"
+    },
+    {
+      "id": "80",
+      "email": "chimimimusic@mac.com",
+      "educationCount": "0",
+      "employmentCount": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\temail\teducationCount\temploymentCount\n511097\trhsorbo@gmail.com\t0\t0\n240045\tchris@cbmg.enterprises\t2\t0\n80\tchimimimusic@mac.com\t0\t0\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

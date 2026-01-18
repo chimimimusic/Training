@@ -1,0 +1,70 @@
+{
+  "query": "SELECT id, moduleNumber, title, youtubeVideoId FROM modules ORDER BY moduleNumber;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title, youtubeVideoId FROM modules ORDER BY moduleNumber;",
+  "rows": [
+    {
+      "id": "1",
+      "moduleNumber": "1",
+      "title": "Session 1: Introduction to SoundBridge Health",
+      "youtubeVideoId": "iwPnLcsSkqc"
+    },
+    {
+      "id": "3",
+      "moduleNumber": "2",
+      "title": "Session 1B: Understanding Anxiety and Depression",
+      "youtubeVideoId": "SWPSDYx3Xes"
+    },
+    {
+      "id": "4",
+      "moduleNumber": "3",
+      "title": "Session 2: Cognitive Behavioral Therapy Foundations",
+      "youtubeVideoId": "fEEbuk-KnhM"
+    },
+    {
+      "id": "5",
+      "moduleNumber": "4",
+      "title": "Session 3: Music Therapy Techniques",
+      "youtubeVideoId": "fpLFg6j5neo"
+    },
+    {
+      "id": "6",
+      "moduleNumber": "5",
+      "title": "Session 4: Group Facilitation Skills",
+      "youtubeVideoId": "rv9mKx2QCdE"
+    },
+    {
+      "id": "7",
+      "moduleNumber": "6",
+      "title": "Session 5: Trauma-Informed Care",
+      "youtubeVideoId": "-4AdTnf2FBY"
+    },
+    {
+      "id": "8",
+      "moduleNumber": "7",
+      "title": "Session 6: Cultural Competency",
+      "youtubeVideoId": "_oWrYJt-zQ8"
+    },
+    {
+      "id": "9",
+      "moduleNumber": "8",
+      "title": "Session 7: Ethics & Boundaries",
+      "youtubeVideoId": "mdOXrGSbNkc"
+    },
+    {
+      "id": "10",
+      "moduleNumber": "9",
+      "title": "Session 8: Crisis Intervention",
+      "youtubeVideoId": "ciFoGuKcQQU"
+    },
+    {
+      "id": "30001",
+      "moduleNumber": "10",
+      "title": "Session 9: Program Evaluation and Sustainability",
+      "youtubeVideoId": "_4d05Mp6_ZE"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\tyoutubeVideoId\n1\t1\tSession 1: Introduction to SoundBridge Health\tiwPnLcsSkqc\n3\t2\tSession 1B: Understanding Anxiety and Depression\tSWPSDYx3Xes\n4\t3\tSession 2: Cognitive Behavioral Therapy Foundations\tfEEbuk-KnhM\n5\t4\tSession 3: Music Therapy Techniques\tfpLFg6j5neo\n6\t5\tSession 4: Group Facilitation Skills\trv9mKx2QCdE\n7\t6\tSession 5: Trauma-Informed Care\t-4AdTnf2FBY\n8\t7\tSession 6: Cultural Competency\t_oWrYJt-zQ8\n9\t8\tSession 7: Ethics & Boundaries\tmdOXrGSbNkc\n10\t9\tSession 8: Crisis Intervention\tciFoGuKcQQU\n30001\t10\tSession 9: Program Evaluation and Sustainability\t_4d05Mp6_ZE\n",
+  "stderr": "",
+  "execution_time_ms": 60
+}

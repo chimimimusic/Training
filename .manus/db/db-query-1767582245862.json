@@ -1,0 +1,52 @@
+{
+  "query": "SELECT id, email, firstName, lastName, phone, age, streetAddress, city, state, zipCode, highestEducation, profileCompletedAt FROM users WHERE role='trainee' ORDER BY createdAt DESC LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, email, firstName, lastName, phone, age, streetAddress, city, state, zipCode, highestEducation, profileCompletedAt FROM users WHERE role='trainee' ORDER BY createdAt DESC LIMIT 5;",
+  "rows": [
+    {
+      "id": "511097",
+      "email": "rhsorbo@gmail.com",
+      "firstName": "NULL",
+      "lastName": "NULL",
+      "phone": "NULL",
+      "age": "NULL",
+      "streetAddress": "NULL",
+      "city": "NULL",
+      "state": "NULL",
+      "zipCode": "NULL",
+      "highestEducation": "NULL",
+      "profileCompletedAt": "NULL"
+    },
+    {
+      "id": "240045",
+      "email": "chris@cbmg.enterprises",
+      "firstName": "NULL",
+      "lastName": "NULL",
+      "phone": "NULL",
+      "age": "NULL",
+      "streetAddress": "NULL",
+      "city": "NULL",
+      "state": "NULL",
+      "zipCode": "NULL",
+      "highestEducation": "NULL",
+      "profileCompletedAt": "NULL"
+    },
+    {
+      "id": "80",
+      "email": "chimimimusic@mac.com",
+      "firstName": "NULL",
+      "lastName": "NULL",
+      "phone": "NULL",
+      "age": "NULL",
+      "streetAddress": "NULL",
+      "city": "NULL",
+      "state": "NULL",
+      "zipCode": "NULL",
+      "highestEducation": "NULL",
+      "profileCompletedAt": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\temail\tfirstName\tlastName\tphone\tage\tstreetAddress\tcity\tstate\tzipCode\thighestEducation\tprofileCompletedAt\n511097\trhsorbo@gmail.com\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\n240045\tchris@cbmg.enterprises\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\n80\tchimimimusic@mac.com\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

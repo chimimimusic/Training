@@ -1,0 +1,8 @@
+{
+  "query": "INSERT INTO modules (moduleNumber, title, description, youtubeVideoId, transcriptContent) VALUES (10, 'Session 9: Program Evaluation and Sustainability', 'Learn strategies for evaluating program effectiveness and ensuring long-term sustainability of music-based interventions.', 'placeholder_9', 'Session 9 covers program evaluation metrics, sustainability planning, and long-term impact assessment of music-based mental health interventions.')",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute INSERT INTO modules (moduleNumber, title, description, youtubeVideoId, transcriptContent) VALUES (10, 'Session 9: Program Evaluation and Sustainability', 'Learn strategies for evaluating program effectiveness and ensuring long-term sustainability of music-based interventions.', 'placeholder_9', 'Session 9 covers program evaluation metrics, sustainability planning, and long-term impact assessment of music-based mental health interventions.')",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1364 (HY000) at line 1: Field 'orderIndex' doesn't have a default value"
+  ]
+}

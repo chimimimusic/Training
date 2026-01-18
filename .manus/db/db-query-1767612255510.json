@@ -1,0 +1,70 @@
+{
+  "query": "SELECT id, title, moduleNumber, orderIndex FROM modules ORDER BY orderIndex;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, title, moduleNumber, orderIndex FROM modules ORDER BY orderIndex;",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Session 1: Introduction to SoundBridge Health",
+      "moduleNumber": "1",
+      "orderIndex": "1"
+    },
+    {
+      "id": "3",
+      "title": "Session 1B: Understanding Anxiety and Depression",
+      "moduleNumber": "2",
+      "orderIndex": "3"
+    },
+    {
+      "id": "4",
+      "title": "Session 2: Cognitive Behavioral Therapy Foundations",
+      "moduleNumber": "3",
+      "orderIndex": "4"
+    },
+    {
+      "id": "5",
+      "title": "Session 3: Music Therapy Techniques",
+      "moduleNumber": "4",
+      "orderIndex": "5"
+    },
+    {
+      "id": "6",
+      "title": "Session 4: Group Facilitation Skills",
+      "moduleNumber": "5",
+      "orderIndex": "6"
+    },
+    {
+      "id": "7",
+      "title": "Session 5: Trauma-Informed Care",
+      "moduleNumber": "6",
+      "orderIndex": "7"
+    },
+    {
+      "id": "8",
+      "title": "Session 6: Cultural Competency",
+      "moduleNumber": "7",
+      "orderIndex": "8"
+    },
+    {
+      "id": "9",
+      "title": "Session 7: Ethics & Boundaries",
+      "moduleNumber": "8",
+      "orderIndex": "9"
+    },
+    {
+      "id": "10",
+      "title": "Session 8: Crisis Intervention",
+      "moduleNumber": "9",
+      "orderIndex": "10"
+    },
+    {
+      "id": "30001",
+      "title": "Session 9: Program Evaluation and Sustainability",
+      "moduleNumber": "10",
+      "orderIndex": "10"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tmoduleNumber\torderIndex\n1\tSession 1: Introduction to SoundBridge Health\t1\t1\n3\tSession 1B: Understanding Anxiety and Depression\t2\t3\n4\tSession 2: Cognitive Behavioral Therapy Foundations\t3\t4\n5\tSession 3: Music Therapy Techniques\t4\t5\n6\tSession 4: Group Facilitation Skills\t5\t6\n7\tSession 5: Trauma-Informed Care\t6\t7\n8\tSession 6: Cultural Competency\t7\t8\n9\tSession 7: Ethics & Boundaries\t8\t9\n10\tSession 8: Crisis Intervention\t9\t10\n30001\tSession 9: Program Evaluation and Sustainability\t10\t10\n",
+  "stderr": "",
+  "execution_time_ms": 417
+}

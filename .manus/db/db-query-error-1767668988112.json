@@ -1,0 +1,8 @@
+{
+  "query": "SELECT id, email, agreedToTerms, agreedToBaa, status FROM user WHERE email = 'soundbridgeimplementation@gmail.com'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, email, agreedToTerms, agreedToBaa, status FROM user WHERE email = 'soundbridgeimplementation@gmail.com'",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1146 (42S02) at line 1: Table 'fvoseotjuq8lnjltvjk9rj.user' doesn't exist"
+  ]
+}

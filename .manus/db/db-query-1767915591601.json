@@ -1,0 +1,37 @@
+{
+  "query": "SELECT id, title, classType, zoomJoinUrl, zoomMeetingId, scheduledAt, status FROM liveClasses ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, title, classType, zoomJoinUrl, zoomMeetingId, scheduledAt, status FROM liveClasses ORDER BY id;",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Live Review Session 1 - Modules 1-3",
+      "classType": "review_3",
+      "zoomJoinUrl": "https://zoom.us/j/1234567890?pwd=example",
+      "zoomMeetingId": "123-456-7890",
+      "scheduledAt": "2026-02-15 14:00:00",
+      "status": "scheduled"
+    },
+    {
+      "id": "2",
+      "title": "Live Review Session 2 - Modules 4-6",
+      "classType": "review_6",
+      "zoomJoinUrl": "https://zoom.us/j/2345678901?pwd=example",
+      "zoomMeetingId": "234-567-8901",
+      "scheduledAt": "2026-03-15 14:00:00",
+      "status": "scheduled"
+    },
+    {
+      "id": "3",
+      "title": "Live Review Session 3 - Modules 7-9",
+      "classType": "review_9",
+      "zoomJoinUrl": "https://zoom.us/j/3456789012?pwd=example",
+      "zoomMeetingId": "345-678-9012",
+      "scheduledAt": "2026-04-15 14:00:00",
+      "status": "scheduled"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tclassType\tzoomJoinUrl\tzoomMeetingId\tscheduledAt\tstatus\n1\tLive Review Session 1 - Modules 1-3\treview_3\thttps://zoom.us/j/1234567890?pwd=example\t123-456-7890\t2026-02-15 14:00:00\tscheduled\n2\tLive Review Session 2 - Modules 4-6\treview_6\thttps://zoom.us/j/2345678901?pwd=example\t234-567-8901\t2026-03-15 14:00:00\tscheduled\n3\tLive Review Session 3 - Modules 7-9\treview_9\thttps://zoom.us/j/3456789012?pwd=example\t345-678-9012\t2026-04-15 14:00:00\tscheduled\n",
+  "stderr": "",
+  "execution_time_ms": 384
+}

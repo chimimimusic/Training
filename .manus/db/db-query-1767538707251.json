@@ -1,0 +1,73 @@
+{
+  "query": "SELECT id, name, email, role, status FROM users ORDER BY id LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, name, email, role, status FROM users ORDER BY id LIMIT 10;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "chrisb",
+      "email": "chrisb@soundbridgehealth.com",
+      "role": "admin",
+      "status": "active"
+    },
+    {
+      "id": "80",
+      "name": "chimimimusic",
+      "email": "chimimimusic@mac.com",
+      "role": "trainee",
+      "status": "active"
+    },
+    {
+      "id": "120012",
+      "name": "Dr. Sarah Martinez",
+      "email": "sarah.martinez@soundbridgehealth.com",
+      "role": "facilitator",
+      "status": "completed"
+    },
+    {
+      "id": "120013",
+      "name": "Michael Chen",
+      "email": "michael.chen@soundbridgehealth.com",
+      "role": "facilitator",
+      "status": "completed"
+    },
+    {
+      "id": "120014",
+      "name": "Emily Rodriguez",
+      "email": "emily.rodriguez@soundbridgehealth.com",
+      "role": "facilitator",
+      "status": "completed"
+    },
+    {
+      "id": "120015",
+      "name": "James Thompson",
+      "email": "james.thompson@soundbridgehealth.com",
+      "role": "facilitator",
+      "status": "completed"
+    },
+    {
+      "id": "120016",
+      "name": "Dr. Aisha Patel",
+      "email": "aisha.patel@soundbridgehealth.com",
+      "role": "facilitator",
+      "status": "completed"
+    },
+    {
+      "id": "120017",
+      "name": "Robert Williams",
+      "email": "robert.williams@soundbridgehealth.com",
+      "role": "facilitator",
+      "status": "completed"
+    },
+    {
+      "id": "240045",
+      "name": "chris",
+      "email": "chris@cbmg.enterprises",
+      "role": "trainee",
+      "status": "active"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\temail\trole\tstatus\n1\tchrisb\tchrisb@soundbridgehealth.com\tadmin\tactive\n80\tchimimimusic\tchimimimusic@mac.com\ttrainee\tactive\n120012\tDr. Sarah Martinez\tsarah.martinez@soundbridgehealth.com\tfacilitator\tcompleted\n120013\tMichael Chen\tmichael.chen@soundbridgehealth.com\tfacilitator\tcompleted\n120014\tEmily Rodriguez\temily.rodriguez@soundbridgehealth.com\tfacilitator\tcompleted\n120015\tJames Thompson\tjames.thompson@soundbridgehealth.com\tfacilitator\tcompleted\n120016\tDr. Aisha Patel\taisha.patel@soundbridgehealth.com\tfacilitator\tcompleted\n120017\tRobert Williams\trobert.williams@soundbridgehealth.com\tfacilitator\tcompleted\n240045\tchris\tchris@cbmg.enterprises\ttrainee\tactive\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

@@ -1,0 +1,24 @@
+{
+  "query": "SELECT id, name, email, role, status FROM users WHERE email LIKE '%chris%' OR name LIKE '%chris%' LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, name, email, role, status FROM users WHERE email LIKE '%chris%' OR name LIKE '%chris%' LIMIT 5;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "chrisb",
+      "email": "chrisb@soundbridgehealth.com",
+      "role": "admin",
+      "status": "active"
+    },
+    {
+      "id": "240045",
+      "name": "chris",
+      "email": "chris@cbmg.enterprises",
+      "role": "trainee",
+      "status": "active"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\temail\trole\tstatus\n1\tchrisb\tchrisb@soundbridgehealth.com\tadmin\tactive\n240045\tchris\tchris@cbmg.enterprises\ttrainee\tactive\n",
+  "stderr": "",
+  "execution_time_ms": 187
+}

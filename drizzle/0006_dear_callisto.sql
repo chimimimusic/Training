@@ -1,0 +1,1 @@
+ALTER TABLE `liveClasses` ADD `recordingUrl` text;

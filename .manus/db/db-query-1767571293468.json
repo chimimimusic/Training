@@ -1,0 +1,16 @@
+{
+  "query": "SELECT id, moduleNumber, title, youtubeVideoId FROM modules WHERE id = 3",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title, youtubeVideoId FROM modules WHERE id = 3",
+  "rows": [
+    {
+      "id": "3",
+      "moduleNumber": "2",
+      "title": "Session 1B: Understanding Anxiety and Depression",
+      "youtubeVideoId": "SWPSDYx3Xes"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\tyoutubeVideoId\n3\t2\tSession 1B: Understanding Anxiety and Depression\tSWPSDYx3Xes\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

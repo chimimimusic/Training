@@ -1,0 +1,60 @@
+{
+  "query": "SELECT moduleNumber, title, youtubeVideoId FROM modules ORDER BY moduleNumber",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT moduleNumber, title, youtubeVideoId FROM modules ORDER BY moduleNumber",
+  "rows": [
+    {
+      "moduleNumber": "1",
+      "title": "Session 1: Introduction to SoundBridge Health",
+      "youtubeVideoId": "iwPnLcsSkqc"
+    },
+    {
+      "moduleNumber": "2",
+      "title": "Session 1B: Understanding Anxiety and Depression",
+      "youtubeVideoId": "SWPSDYx3Xes"
+    },
+    {
+      "moduleNumber": "3",
+      "title": "Session 2: Cognitive Behavioral Therapy Foundations",
+      "youtubeVideoId": "fEEbuk-KnhM"
+    },
+    {
+      "moduleNumber": "4",
+      "title": "Session 4: Building Therapeutic Playlists",
+      "youtubeVideoId": "fpLFg6j5neo"
+    },
+    {
+      "moduleNumber": "5",
+      "title": "Session 5: Facilitating Group Sessions",
+      "youtubeVideoId": "rv9mKx2QCdE"
+    },
+    {
+      "moduleNumber": "6",
+      "title": "Session 6: Managing Patient Progress",
+      "youtubeVideoId": "-4AdTnf2FBY"
+    },
+    {
+      "moduleNumber": "7",
+      "title": "Session 7: Handling Difficult Situations",
+      "youtubeVideoId": "_oWrYJt-zQ8"
+    },
+    {
+      "moduleNumber": "8",
+      "title": "Session 8: Documentation and Compliance",
+      "youtubeVideoId": "mdOXrGSbNkc"
+    },
+    {
+      "moduleNumber": "9",
+      "title": "Session 9: Certification and Next Steps",
+      "youtubeVideoId": "ciFoGuKcQQU"
+    },
+    {
+      "moduleNumber": "10",
+      "title": "Session 9: Program Evaluation and Sustainability",
+      "youtubeVideoId": "_4d05Mp6_ZE"
+    }
+  ],
+  "messages": [],
+  "stdout": "moduleNumber\ttitle\tyoutubeVideoId\n1\tSession 1: Introduction to SoundBridge Health\tiwPnLcsSkqc\n2\tSession 1B: Understanding Anxiety and Depression\tSWPSDYx3Xes\n3\tSession 2: Cognitive Behavioral Therapy Foundations\tfEEbuk-KnhM\n4\tSession 4: Building Therapeutic Playlists\tfpLFg6j5neo\n5\tSession 5: Facilitating Group Sessions\trv9mKx2QCdE\n6\tSession 6: Managing Patient Progress\t-4AdTnf2FBY\n7\tSession 7: Handling Difficult Situations\t_oWrYJt-zQ8\n8\tSession 8: Documentation and Compliance\tmdOXrGSbNkc\n9\tSession 9: Certification and Next Steps\tciFoGuKcQQU\n10\tSession 9: Program Evaluation and Sustainability\t_4d05Mp6_ZE\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

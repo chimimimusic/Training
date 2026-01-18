@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE modules SET title = 'Session 2: Cognitive Behavioral Therapy Foundations', description = 'Explore the fundamentals of CBT and its application in music-based interventions for anxiety and depression.', youtubeVideoId = 'vZRP8JLmfHo', transcriptContent = 'Session 2 focuses on Cognitive Behavioral Therapy (CBT) foundations and how they integrate with music-based interventions. You will learn core CBT principles, thought patterns, and behavioral activation techniques.' WHERE id = 4",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute UPDATE modules SET title = 'Session 2: Cognitive Behavioral Therapy Foundations', description = 'Explore the fundamentals of CBT and its application in music-based interventions for anxiety and depression.', youtubeVideoId = 'vZRP8JLmfHo', transcriptContent = 'Session 2 focuses on Cognitive Behavioral Therapy (CBT) foundations and how they integrate with music-based interventions. You will learn core CBT principles, thought patterns, and behavioral activation techniques.' WHERE id = 4",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 55
+}

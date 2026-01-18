@@ -1,0 +1,35 @@
+{
+  "query": "SELECT ao.optionLetter, ao.optionText, ao.isCorrect FROM assessmentOptions ao JOIN assessments a ON ao.assessmentId = a.id WHERE a.moduleId = 2 AND a.questionNumber = 1 ORDER BY ao.optionLetter",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT ao.optionLetter, ao.optionText, ao.isCorrect FROM assessmentOptions ao JOIN assessments a ON ao.assessmentId = a.id WHERE a.moduleId = 2 AND a.questionNumber = 1 ORDER BY ao.optionLetter",
+  "rows": [
+    {
+      "optionLetter": "A",
+      "optionText": "Whether to continue the program, change facilitators, or request modifications",
+      "isCorrect": "0"
+    },
+    {
+      "optionLetter": "B",
+      "optionText": "Whether to trust you through their screen, trust the process, and trust themselves to try something new",
+      "isCorrect": "1"
+    },
+    {
+      "optionLetter": "C",
+      "optionText": "Whether to invest financially, commit time, and share personal information",
+      "isCorrect": "0"
+    },
+    {
+      "optionLetter": "D",
+      "optionText": "Whether to use music, breathing, or visualization techniques",
+      "isCorrect": "0"
+    },
+    {
+      "optionLetter": "E",
+      "optionText": "Whether to practice daily, weekly, or only during sessions",
+      "isCorrect": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "optionLetter\toptionText\tisCorrect\nA\tWhether to continue the program, change facilitators, or request modifications\t0\nB\tWhether to trust you through their screen, trust the process, and trust themselves to try something new\t1\nC\tWhether to invest financially, commit time, and share personal information\t0\nD\tWhether to use music, breathing, or visualization techniques\t0\nE\tWhether to practice daily, weekly, or only during sessions\t0\n",
+  "stderr": "",
+  "execution_time_ms": 54
+}

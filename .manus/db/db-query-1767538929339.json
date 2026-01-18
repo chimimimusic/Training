@@ -1,0 +1,18 @@
+{
+  "query": "SELECT id, openId, name, email, role, status FROM users WHERE id = 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, openId, name, email, role, status FROM users WHERE id = 1;",
+  "rows": [
+    {
+      "id": "1",
+      "openId": "ehBu5fdeqNeRXXQzEyFFpu",
+      "name": "chrisb",
+      "email": "chrisb@soundbridgehealth.com",
+      "role": "admin",
+      "status": "active"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\topenId\tname\temail\trole\tstatus\n1\tehBu5fdeqNeRXXQzEyFFpu\tchrisb\tchrisb@soundbridgehealth.com\tadmin\tactive\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

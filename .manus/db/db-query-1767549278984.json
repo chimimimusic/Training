@@ -1,0 +1,110 @@
+{
+  "query": "SELECT id, moduleId, questionText FROM assessments WHERE moduleId IN (2, 8) ORDER BY moduleId, id",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleId, questionText FROM assessments WHERE moduleId IN (2, 8) ORDER BY moduleId, id",
+  "rows": [
+    {
+      "id": "30001",
+      "moduleId": "2",
+      "questionText": "What is the primary purpose of the opening check-in questions?"
+    },
+    {
+      "id": "30002",
+      "moduleId": "2",
+      "questionText": "How should facilitators balance the presentation of rhythmic entrainment concepts?"
+    },
+    {
+      "id": "30003",
+      "moduleId": "2",
+      "questionText": "What are the three opening questions that should be used consistently across sessions?"
+    },
+    {
+      "id": "30004",
+      "moduleId": "2",
+      "questionText": "How should facilitators respond when participants feel self-conscious about the pre-shot routine?"
+    },
+    {
+      "id": "30005",
+      "moduleId": "2",
+      "questionText": "What is crucial about the facilitator's response regarding 'no wrong way'?"
+    },
+    {
+      "id": "30006",
+      "moduleId": "2",
+      "questionText": "When explaining neural entrainment, what should facilitators watch for?"
+    },
+    {
+      "id": "30007",
+      "moduleId": "2",
+      "questionText": "Which analogy is suggested as more accessible than technical neuroscience language?"
+    },
+    {
+      "id": "30008",
+      "moduleId": "2",
+      "questionText": "How should facilitators respond to a participant who says 'like the music gives my brain a pattern to follow'?"
+    },
+    {
+      "id": "30009",
+      "moduleId": "2",
+      "questionText": "Why is motor entrainment easier for participants to understand than neural entrainment?"
+    },
+    {
+      "id": "30010",
+      "moduleId": "2",
+      "questionText": "How should facilitators help participants connect motor entrainment to breathing work?"
+    },
+    {
+      "id": "90013",
+      "moduleId": "8",
+      "questionText": "This is a placeholder question for Session 8. What key concept will be covered in this session?"
+    },
+    {
+      "id": "90014",
+      "moduleId": "8",
+      "questionText": "Placeholder question 2 for Session 8. Which technique is most important?"
+    },
+    {
+      "id": "90015",
+      "moduleId": "8",
+      "questionText": "Placeholder question 3 for Session 8. How should facilitators approach this topic?"
+    },
+    {
+      "id": "90016",
+      "moduleId": "8",
+      "questionText": "Placeholder question 4 for Session 8. What is the primary goal?"
+    },
+    {
+      "id": "90017",
+      "moduleId": "8",
+      "questionText": "Placeholder question 5 for Session 8. Which statement is true?"
+    },
+    {
+      "id": "90018",
+      "moduleId": "8",
+      "questionText": "Placeholder question 6 for Session 8. What should be avoided?"
+    },
+    {
+      "id": "90019",
+      "moduleId": "8",
+      "questionText": "Placeholder question 7 for Session 8. How do you respond to participants?"
+    },
+    {
+      "id": "90020",
+      "moduleId": "8",
+      "questionText": "Placeholder question 8 for Session 8. What is best practice?"
+    },
+    {
+      "id": "90021",
+      "moduleId": "8",
+      "questionText": "Placeholder question 9 for Session 8. Which element is essential?"
+    },
+    {
+      "id": "90022",
+      "moduleId": "8",
+      "questionText": "Placeholder question 10 for Session 8. What represents success?"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleId\tquestionText\n30001\t2\tWhat is the primary purpose of the opening check-in questions?\n30002\t2\tHow should facilitators balance the presentation of rhythmic entrainment concepts?\n30003\t2\tWhat are the three opening questions that should be used consistently across sessions?\n30004\t2\tHow should facilitators respond when participants feel self-conscious about the pre-shot routine?\n30005\t2\tWhat is crucial about the facilitator's response regarding 'no wrong way'?\n30006\t2\tWhen explaining neural entrainment, what should facilitators watch for?\n30007\t2\tWhich analogy is suggested as more accessible than technical neuroscience language?\n30008\t2\tHow should facilitators respond to a participant who says 'like the music gives my brain a pattern to follow'?\n30009\t2\tWhy is motor entrainment easier for participants to understand than neural entrainment?\n30010\t2\tHow should facilitators help participants connect motor entrainment to breathing work?\n90013\t8\tThis is a placeholder question for Session 8. What key concept will be covered in this session?\n90014\t8\tPlaceholder question 2 for Session 8. Which technique is most important?\n90015\t8\tPlaceholder question 3 for Session 8. How should facilitators approach this topic?\n90016\t8\tPlaceholder question 4 for Session 8. What is the primary goal?\n90017\t8\tPlaceholder question 5 for Session 8. Which statement is true?\n90018\t8\tPlaceholder question 6 for Session 8. What should be avoided?\n90019\t8\tPlaceholder question 7 for Session 8. How do you respond to participants?\n90020\t8\tPlaceholder question 8 for Session 8. What is best practice?\n90021\t8\tPlaceholder question 9 for Session 8. Which element is essential?\n90022\t8\tPlaceholder question 10 for Session 8. What represents success?\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

@@ -1,0 +1,90 @@
+{
+  "query": "SELECT \n  moduleNumber,\n  title,\n  youtubeVideoId,\n  CASE \n    WHEN youtubeVideoId = 'PLACEHOLDER' THEN 'MISSING'\n    ELSE 'HAS VIDEO'\n  END as video_status,\n  CHAR_LENGTH(transcriptContent) as transcript_length,\n  CASE \n    WHEN transcriptContent IS NULL THEN 'MISSING'\n    WHEN transcriptContent LIKE '%PLACEHOLDER%' THEN 'PLACEHOLDER'\n    WHEN CHAR_LENGTH(transcriptContent) < 200 THEN 'TOO SHORT'\n    ELSE 'COMPLETE'\n  END as transcript_status\nFROM modules\nORDER BY moduleNumber",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT \n  moduleNumber,\n  title,\n  youtubeVideoId,\n  CASE \n    WHEN youtubeVideoId = 'PLACEHOLDER' THEN 'MISSING'\n    ELSE 'HAS VIDEO'\n  END as video_status,\n  CHAR_LENGTH(transcriptContent) as transcript_length,\n  CASE \n    WHEN transcriptContent IS NULL THEN 'MISSING'\n    WHEN transcriptContent LIKE '%PLACEHOLDER%' THEN 'PLACEHOLDER'\n    WHEN CHAR_LENGTH(transcriptContent) < 200 THEN 'TOO SHORT'\n    ELSE 'COMPLETE'\n  END as transcript_status\nFROM modules\nORDER BY moduleNumber",
+  "rows": [
+    {
+      "moduleNumber": "1",
+      "title": "Introduction to SoundBridge Health Protocol",
+      "youtubeVideoId": "iwPnLcsSkqc",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2137",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "2",
+      "title": "Understanding Anxiety and Depression",
+      "youtubeVideoId": "SWPSDYx3Xes",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2305",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "3",
+      "title": "Music-Based Intervention Fundamentals",
+      "youtubeVideoId": "fEEbuk-KnhM",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2249",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "4",
+      "title": "Session Structure and Flow",
+      "youtubeVideoId": "fpLFg6j5neo",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2341",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "5",
+      "title": "Facilitation Techniques",
+      "youtubeVideoId": "rv9mKx2QCdE",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2278",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "6",
+      "title": "Telehealth Best Practices",
+      "youtubeVideoId": "-4AdTnf2FBY",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2132",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "7",
+      "title": "Patient Assessment and Progress Tracking",
+      "youtubeVideoId": "_oWrYJt-zQ8",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2124",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "8",
+      "title": "Handling Difficult Situations",
+      "youtubeVideoId": "mdOXrGSbNkc",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2086",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "9",
+      "title": "Clinical Documentation and Compliance",
+      "youtubeVideoId": "ciFoGuKcQQU",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2326",
+      "transcript_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "10",
+      "title": "Certification and Next Steps",
+      "youtubeVideoId": "_4d05Mp6_ZE",
+      "video_status": "HAS VIDEO",
+      "transcript_length": "2918",
+      "transcript_status": "COMPLETE"
+    }
+  ],
+  "messages": [],
+  "stdout": "moduleNumber\ttitle\tyoutubeVideoId\tvideo_status\ttranscript_length\ttranscript_status\n1\tIntroduction to SoundBridge Health Protocol\tiwPnLcsSkqc\tHAS VIDEO\t2137\tCOMPLETE\n2\tUnderstanding Anxiety and Depression\tSWPSDYx3Xes\tHAS VIDEO\t2305\tCOMPLETE\n3\tMusic-Based Intervention Fundamentals\tfEEbuk-KnhM\tHAS VIDEO\t2249\tCOMPLETE\n4\tSession Structure and Flow\tfpLFg6j5neo\tHAS VIDEO\t2341\tCOMPLETE\n5\tFacilitation Techniques\trv9mKx2QCdE\tHAS VIDEO\t2278\tCOMPLETE\n6\tTelehealth Best Practices\t-4AdTnf2FBY\tHAS VIDEO\t2132\tCOMPLETE\n7\tPatient Assessment and Progress Tracking\t_oWrYJt-zQ8\tHAS VIDEO\t2124\tCOMPLETE\n8\tHandling Difficult Situations\tmdOXrGSbNkc\tHAS VIDEO\t2086\tCOMPLETE\n9\tClinical Documentation and Compliance\tciFoGuKcQQU\tHAS VIDEO\t2326\tCOMPLETE\n10\tCertification and Next Steps\t_4d05Mp6_ZE\tHAS VIDEO\t2918\tCOMPLETE\n",
+  "stderr": "",
+  "execution_time_ms": 90
+}

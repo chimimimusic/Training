@@ -1,0 +1,366 @@
+import { useAuth } from "@/_core/hooks/useAuth";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { trpc } from "@/lib/trpc";
+import { ArrowLeft, Download, FileText, FileSpreadsheet } from "lucide-react";
+import { useState } from "react";
+import { useLocation } from "wouter";
+import Header from "@/components/Header";
+import { toast } from "sonner";
+
+export default function AdminProgressExport() {
+  const { user } = useAuth();
+  const [, setLocation] = useLocation();
+  const [isExporting, setIsExporting] = useState(false);
+
+  const { data: exportData } = trpc.admin.exportTraineeProgress.useQuery({});
+
+  if (user?.role !== "admin") {
+    setLocation("/training");
+    return null;
+  }
+
+  const exportToCSV = () => {
+    if (!exportData || exportData.length === 0) {
+      toast.error("No data available to export");
+      return;
+    }
+
+    setIsExporting(true);
+
+    try {
+      // Create CSV headers
+      const headers = [
+        "Name",
+        "Email",
+        "Status",
+        "Enrollment Date",
+        "Completed Modules",
+        "Total Modules",
+        "Completion %",
+        "Avg Assessment Score",
+        "Profile Completed",
+        "Last Activity",
+      ];
+
+      // Create CSV rows
+      const rows = exportData.map((trainee) => [
+        trainee.name,
+        trainee.email,
+        trainee.status,
+        trainee.enrollmentDate,
+        trainee.completedModules,
+        trainee.totalModules,
+        trainee.completionPercentage,
+        trainee.avgAssessmentScore,
+        trainee.profileCompleted,
+        trainee.lastActivity,
+      ]);
+
+      // Combine headers and rows
+      const csvContent = [
+        headers.join(","),
+        ...rows.map((row) => row.map((cell) => `"${cell}"`).join(",")),
+      ].join("\\n");
+
+      // Create blob and download
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      
+      link.setAttribute("href", url);
+      link.setAttribute("download", `trainee-progress-${new Date().toISOString().split("T")[0]}.csv`);
+      link.style.visibility = "hidden";
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      toast.success("CSV export completed successfully");
+    } catch (error) {
+      toast.error("Failed to export CSV");
+      console.error("CSV export error:", error);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  const exportToPDF = () => {
+    if (!exportData || exportData.length === 0) {
+      toast.error("No data available to export");
+      return;
+    }
+
+    setIsExporting(true);
+
+    try {
+      // Create HTML content for PDF
+      const htmlContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Trainee Progress Report</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              margin: 40px;
+              color: #333;
+            }
+            h1 {
+              color: #2563eb;
+              border-bottom: 3px solid #2563eb;
+              padding-bottom: 10px;
+            }
+            .report-info {
+              margin: 20px 0;
+              padding: 15px;
+              background-color: #f3f4f6;
+              border-radius: 8px;
+            }
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 20px;
+            }
+            th {
+              background-color: #2563eb;
+              color: white;
+              padding: 12px;
+              text-align: left;
+              font-weight: bold;
+            }
+            td {
+              padding: 10px 12px;
+              border-bottom: 1px solid #e5e7eb;
+            }
+            tr:nth-child(even) {
+              background-color: #f9fafb;
+            }
+            tr:hover {
+              background-color: #f3f4f6;
+            }
+            .status-active { color: #10b981; font-weight: bold; }
+            .status-pending { color: #f59e0b; font-weight: bold; }
+            .status-suspended { color: #ef4444; font-weight: bold; }
+            .status-completed { color: #3b82f6; font-weight: bold; }
+            .footer {
+              margin-top: 40px;
+              padding-top: 20px;
+              border-top: 2px solid #e5e7eb;
+              text-align: center;
+              color: #6b7280;
+              font-size: 12px;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>SoundBridge Health - Trainee Progress Report</h1>
+          <div class="report-info">
+            <p><strong>Report Generated:</strong> ${new Date().toLocaleString()}</p>
+            <p><strong>Total Trainees:</strong> ${exportData.length}</p>
+            <p><strong>Generated By:</strong> ${user?.name || user?.email || "Admin"}</p>
+          </div>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Enrolled</th>
+                <th>Progress</th>
+                <th>Avg Score</th>
+                <th>Last Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${exportData
+                .map(
+                  (trainee) => `
+                <tr>
+                  <td>${trainee.name}</td>
+                  <td>${trainee.email}</td>
+                  <td class="status-${trainee.status}">${trainee.status}</td>
+                  <td>${trainee.enrollmentDate}</td>
+                  <td>${trainee.completedModules}/${trainee.totalModules} (${trainee.completionPercentage}%)</td>
+                  <td>${trainee.avgAssessmentScore}</td>
+                  <td>${trainee.lastActivity}</td>
+                </tr>
+              `
+                )
+                .join("")}
+            </tbody>
+          </table>
+          
+          <div class="footer">
+            <p>SoundBridge Health Facilitator Training Portal</p>
+            <p>This report contains confidential information. Handle with care.</p>
+          </div>
+        </body>
+        </html>
+      `;
+
+      // Create blob and download
+      const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      
+      link.setAttribute("href", url);
+      link.setAttribute("download", `trainee-progress-${new Date().toISOString().split("T")[0]}.html`);
+      link.style.visibility = "hidden";
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      toast.success("PDF export completed successfully (HTML format - print to PDF from browser)");
+      toast.info("Open the downloaded file and use Print → Save as PDF");
+    } catch (error) {
+      toast.error("Failed to export PDF");
+      console.error("PDF export error:", error);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <div className="flex-1 p-6">
+        <div className="max-w-4xl mx-auto space-y-6">
+          {/* Header */}
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" size="icon" onClick={() => setLocation("/admin/progress")}>
+              <ArrowLeft className="w-5 h-5" />
+            </Button>
+            <div className="flex-1">
+              <h1 className="text-4xl font-bold text-white">Export Progress Reports</h1>
+              <p className="text-white/70">Download trainee progress data in various formats</p>
+            </div>
+          </div>
+
+          {/* Export Options */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* CSV Export */}
+            <Card className="bg-card/50 backdrop-blur border-white/10">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-green-500/20 rounded-lg">
+                    <FileSpreadsheet className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div>
+                    <CardTitle>Export to CSV</CardTitle>
+                    <CardDescription>Spreadsheet format</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Download trainee progress data as a CSV file. Perfect for importing into Excel,
+                  Google Sheets, or other data analysis tools.
+                </p>
+                
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Includes:</p>
+                  <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                    <li>• Name and contact information</li>
+                    <li>• Enrollment and status details</li>
+                    <li>• Module completion progress</li>
+                    <li>• Assessment scores</li>
+                    <li>• Last activity dates</li>
+                  </ul>
+                </div>
+
+                <Button
+                  className="w-full"
+                  onClick={exportToCSV}
+                  disabled={isExporting || !exportData || exportData.length === 0}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  {isExporting ? "Exporting..." : "Download CSV"}
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* PDF Export */}
+            <Card className="bg-card/50 backdrop-blur border-white/10">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-red-500/20 rounded-lg">
+                    <FileText className="w-6 h-6 text-red-400" />
+                  </div>
+                  <div>
+                    <CardTitle>Export to PDF</CardTitle>
+                    <CardDescription>Printable report format</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Generate a formatted HTML report that can be printed to PDF. Ideal for sharing
+                  with stakeholders or archiving records.
+                </p>
+                
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Features:</p>
+                  <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                    <li>• Professional formatting</li>
+                    <li>• Color-coded status indicators</li>
+                    <li>• Summary statistics</li>
+                    <li>• Print-ready layout</li>
+                    <li>• Timestamp and attribution</li>
+                  </ul>
+                </div>
+
+                <Button
+                  className="w-full"
+                  variant="outline"
+                  onClick={exportToPDF}
+                  disabled={isExporting || !exportData || exportData.length === 0}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  {isExporting ? "Exporting..." : "Download PDF"}
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Export Info */}
+          <Card className="bg-card/50 backdrop-blur border-white/10">
+            <CardHeader>
+              <CardTitle>Export Information</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-sm font-medium mb-2">Data Included</p>
+                  <p className="text-sm text-muted-foreground">
+                    All active, pending, and suspended trainees are included in the export.
+                    Deleted users are excluded.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-medium mb-2">Privacy Notice</p>
+                  <p className="text-sm text-muted-foreground">
+                    Exported files contain sensitive personal information. Handle with care and
+                    follow HIPAA guidelines.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-white/10">
+                <p className="text-sm text-muted-foreground">
+                  <strong>Total Trainees Available:</strong> {exportData?.length || 0}
+                </p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  <strong>Last Updated:</strong> {new Date().toLocaleString()}
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+}

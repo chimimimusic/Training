@@ -1,0 +1,30 @@
+{
+  "query": "SELECT id, questionText FROM assessments WHERE moduleId = 1 LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, questionText FROM assessments WHERE moduleId = 1 LIMIT 5;",
+  "rows": [
+    {
+      "id": "90001",
+      "questionText": "What is the primary purpose of Session 1 in the 10-week telehealth journey?"
+    },
+    {
+      "id": "90002",
+      "questionText": "Which element should NOT be included in your intake review essentials before Session 1?"
+    },
+    {
+      "id": "90003",
+      "questionText": "What is the recommended approach for helping participants create their optimal telehealth environment?"
+    },
+    {
+      "id": "90004",
+      "questionText": "How should you respond when a participant shares vulnerable information like \"I just want to stop feeling so anxious all the time\"?"
+    },
+    {
+      "id": "90005",
+      "questionText": "When explaining the 3-step protocol to participants, what tone should you use?"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tquestionText\n90001\tWhat is the primary purpose of Session 1 in the 10-week telehealth journey?\n90002\tWhich element should NOT be included in your intake review essentials before Session 1?\n90003\tWhat is the recommended approach for helping participants create their optimal telehealth environment?\n90004\tHow should you respond when a participant shares vulnerable information like \"I just want to stop feeling so anxious all the time\"?\n90005\tWhen explaining the 3-step protocol to participants, what tone should you use?\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

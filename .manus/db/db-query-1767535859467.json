@@ -1,0 +1,80 @@
+{
+  "query": "SELECT \n  m.moduleNumber,\n  m.title as module_title,\n  COUNT(a.id) as question_count,\n  SUM(CASE WHEN a.questionText LIKE '%PLACEHOLDER%' OR a.questionText LIKE '%placeholder%' THEN 1 ELSE 0 END) as placeholder_count,\n  CASE \n    WHEN SUM(CASE WHEN a.questionText LIKE '%PLACEHOLDER%' OR a.questionText LIKE '%placeholder%' THEN 1 ELSE 0 END) > 0 THEN 'HAS PLACEHOLDERS'\n    WHEN COUNT(a.id) = 0 THEN 'NO QUESTIONS'\n    ELSE 'COMPLETE'\n  END as assessment_status\nFROM modules m\nLEFT JOIN assessments a ON m.id = a.moduleId\nGROUP BY m.id, m.moduleNumber, m.title\nORDER BY m.moduleNumber",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT \n  m.moduleNumber,\n  m.title as module_title,\n  COUNT(a.id) as question_count,\n  SUM(CASE WHEN a.questionText LIKE '%PLACEHOLDER%' OR a.questionText LIKE '%placeholder%' THEN 1 ELSE 0 END) as placeholder_count,\n  CASE \n    WHEN SUM(CASE WHEN a.questionText LIKE '%PLACEHOLDER%' OR a.questionText LIKE '%placeholder%' THEN 1 ELSE 0 END) > 0 THEN 'HAS PLACEHOLDERS'\n    WHEN COUNT(a.id) = 0 THEN 'NO QUESTIONS'\n    ELSE 'COMPLETE'\n  END as assessment_status\nFROM modules m\nLEFT JOIN assessments a ON m.id = a.moduleId\nGROUP BY m.id, m.moduleNumber, m.title\nORDER BY m.moduleNumber",
+  "rows": [
+    {
+      "moduleNumber": "1",
+      "module_title": "Introduction to SoundBridge Health Protocol",
+      "question_count": "12",
+      "placeholder_count": "0",
+      "assessment_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "2",
+      "module_title": "Understanding Anxiety and Depression",
+      "question_count": "10",
+      "placeholder_count": "0",
+      "assessment_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "3",
+      "module_title": "Music-Based Intervention Fundamentals",
+      "question_count": "10",
+      "placeholder_count": "0",
+      "assessment_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "4",
+      "module_title": "Session Structure and Flow",
+      "question_count": "10",
+      "placeholder_count": "0",
+      "assessment_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "5",
+      "module_title": "Facilitation Techniques",
+      "question_count": "10",
+      "placeholder_count": "0",
+      "assessment_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "6",
+      "module_title": "Telehealth Best Practices",
+      "question_count": "10",
+      "placeholder_count": "0",
+      "assessment_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "7",
+      "module_title": "Patient Assessment and Progress Tracking",
+      "question_count": "10",
+      "placeholder_count": "0",
+      "assessment_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "8",
+      "module_title": "Handling Difficult Situations",
+      "question_count": "10",
+      "placeholder_count": "1",
+      "assessment_status": "HAS PLACEHOLDERS"
+    },
+    {
+      "moduleNumber": "9",
+      "module_title": "Clinical Documentation and Compliance",
+      "question_count": "10",
+      "placeholder_count": "0",
+      "assessment_status": "COMPLETE"
+    },
+    {
+      "moduleNumber": "10",
+      "module_title": "Certification and Next Steps",
+      "question_count": "10",
+      "placeholder_count": "1",
+      "assessment_status": "HAS PLACEHOLDERS"
+    }
+  ],
+  "messages": [],
+  "stdout": "moduleNumber\tmodule_title\tquestion_count\tplaceholder_count\tassessment_status\n1\tIntroduction to SoundBridge Health Protocol\t12\t0\tCOMPLETE\n2\tUnderstanding Anxiety and Depression\t10\t0\tCOMPLETE\n3\tMusic-Based Intervention Fundamentals\t10\t0\tCOMPLETE\n4\tSession Structure and Flow\t10\t0\tCOMPLETE\n5\tFacilitation Techniques\t10\t0\tCOMPLETE\n6\tTelehealth Best Practices\t10\t0\tCOMPLETE\n7\tPatient Assessment and Progress Tracking\t10\t0\tCOMPLETE\n8\tHandling Difficult Situations\t10\t1\tHAS PLACEHOLDERS\n9\tClinical Documentation and Compliance\t10\t0\tCOMPLETE\n10\tCertification and Next Steps\t10\t1\tHAS PLACEHOLDERS\n",
+  "stderr": "",
+  "execution_time_ms": 124
+}

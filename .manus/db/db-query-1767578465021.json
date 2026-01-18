@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE modules SET title = CASE \n  WHEN id = 6 THEN 'Session 4: Group Facilitation Skills'\n  WHEN id = 7 THEN 'Session 5: Trauma-Informed Care'\n  WHEN id = 8 THEN 'Session 6: Cultural Competency'\n  WHEN id = 9 THEN 'Session 7: Ethics & Boundaries'\n  WHEN id = 10 THEN 'Session 8: Crisis Intervention'\nEND WHERE id IN (6, 7, 8, 9, 10)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute UPDATE modules SET title = CASE \n  WHEN id = 6 THEN 'Session 4: Group Facilitation Skills'\n  WHEN id = 7 THEN 'Session 5: Trauma-Informed Care'\n  WHEN id = 8 THEN 'Session 6: Cultural Competency'\n  WHEN id = 9 THEN 'Session 7: Ethics & Boundaries'\n  WHEN id = 10 THEN 'Session 8: Crisis Intervention'\nEND WHERE id IN (6, 7, 8, 9, 10)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 58
+}

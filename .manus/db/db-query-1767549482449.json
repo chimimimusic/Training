@@ -1,0 +1,28 @@
+{
+  "query": "SELECT id, questionNumber, questionText, correctAnswer FROM assessments WHERE moduleId = 2 ORDER BY questionNumber LIMIT 3",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, questionNumber, questionText, correctAnswer FROM assessments WHERE moduleId = 2 ORDER BY questionNumber LIMIT 3",
+  "rows": [
+    {
+      "id": "120001",
+      "questionNumber": "1",
+      "questionText": "According to the video, what three decisions do patients make during Session 1?",
+      "correctAnswer": "1"
+    },
+    {
+      "id": "120002",
+      "questionNumber": "2",
+      "questionText": "What should facilitators gather from participants' intake information before Session 1?",
+      "correctAnswer": "0"
+    },
+    {
+      "id": "120003",
+      "questionNumber": "3",
+      "questionText": "What are the three essentials for creating an optimal telehealth environment?",
+      "correctAnswer": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tquestionNumber\tquestionText\tcorrectAnswer\n120001\t1\tAccording to the video, what three decisions do patients make during Session 1?\t1\n120002\t2\tWhat should facilitators gather from participants' intake information before Session 1?\t0\n120003\t3\tWhat are the three essentials for creating an optimal telehealth environment?\t1\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

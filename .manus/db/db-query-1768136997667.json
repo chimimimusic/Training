@@ -1,0 +1,40 @@
+{
+  "query": "SELECT DISTINCT moduleId FROM assessments ORDER BY moduleId;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT DISTINCT moduleId FROM assessments ORDER BY moduleId;",
+  "rows": [
+    {
+      "moduleId": "1"
+    },
+    {
+      "moduleId": "3"
+    },
+    {
+      "moduleId": "4"
+    },
+    {
+      "moduleId": "5"
+    },
+    {
+      "moduleId": "6"
+    },
+    {
+      "moduleId": "7"
+    },
+    {
+      "moduleId": "8"
+    },
+    {
+      "moduleId": "9"
+    },
+    {
+      "moduleId": "10"
+    },
+    {
+      "moduleId": "11"
+    }
+  ],
+  "messages": [],
+  "stdout": "moduleId\n1\n3\n4\n5\n6\n7\n8\n9\n10\n11\n",
+  "stderr": "",
+  "execution_time_ms": 524
+}

@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE userModuleProgress \nSET status = 'completed', \n    videoWatched = true, \n    transcriptViewed = true, \n    assessmentCompleted = true,\n    assessmentScore = 100,\n    completedAt = NOW()\nWHERE userId = 1 AND moduleId = 3;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute \nUPDATE userModuleProgress \nSET status = 'completed', \n    videoWatched = true, \n    transcriptViewed = true, \n    assessmentCompleted = true,\n    assessmentScore = 100,\n    completedAt = NOW()\nWHERE userId = 1 AND moduleId = 3;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 54
+}

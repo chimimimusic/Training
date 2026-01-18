@@ -1,0 +1,13 @@
+{
+  "query": "SELECT COUNT(*) as count FROM assessments WHERE moduleId = 3",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT COUNT(*) as count FROM assessments WHERE moduleId = 3",
+  "rows": [
+    {
+      "count": "22"
+    }
+  ],
+  "messages": [],
+  "stdout": "count\n22\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

@@ -1,0 +1,35 @@
+{
+  "query": "SELECT id, moduleNumber, title FROM modules WHERE id IN (6, 7, 8, 9, 10) ORDER BY id",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title FROM modules WHERE id IN (6, 7, 8, 9, 10) ORDER BY id",
+  "rows": [
+    {
+      "id": "6",
+      "moduleNumber": "5",
+      "title": "Session 5: Facilitating Group Sessions"
+    },
+    {
+      "id": "7",
+      "moduleNumber": "6",
+      "title": "Session 6: Managing Patient Progress"
+    },
+    {
+      "id": "8",
+      "moduleNumber": "7",
+      "title": "Session 7: Handling Difficult Situations"
+    },
+    {
+      "id": "9",
+      "moduleNumber": "8",
+      "title": "Session 8: Documentation and Compliance"
+    },
+    {
+      "id": "10",
+      "moduleNumber": "9",
+      "title": "Session 9: Certification and Next Steps"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\n6\t5\tSession 5: Facilitating Group Sessions\n7\t6\tSession 6: Managing Patient Progress\n8\t7\tSession 7: Handling Difficult Situations\n9\t8\tSession 8: Documentation and Compliance\n10\t9\tSession 9: Certification and Next Steps\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

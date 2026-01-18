@@ -1,0 +1,50 @@
+{
+  "query": "SELECT moduleId, COUNT(*) as question_count FROM assessments GROUP BY moduleId ORDER BY moduleId",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT moduleId, COUNT(*) as question_count FROM assessments GROUP BY moduleId ORDER BY moduleId",
+  "rows": [
+    {
+      "moduleId": "1",
+      "question_count": "25"
+    },
+    {
+      "moduleId": "3",
+      "question_count": "22"
+    },
+    {
+      "moduleId": "4",
+      "question_count": "10"
+    },
+    {
+      "moduleId": "5",
+      "question_count": "10"
+    },
+    {
+      "moduleId": "6",
+      "question_count": "10"
+    },
+    {
+      "moduleId": "7",
+      "question_count": "10"
+    },
+    {
+      "moduleId": "8",
+      "question_count": "12"
+    },
+    {
+      "moduleId": "9",
+      "question_count": "10"
+    },
+    {
+      "moduleId": "10",
+      "question_count": "10"
+    },
+    {
+      "moduleId": "11",
+      "question_count": "12"
+    }
+  ],
+  "messages": [],
+  "stdout": "moduleId\tquestion_count\n1\t25\n3\t22\n4\t10\n5\t10\n6\t10\n7\t10\n8\t12\n9\t10\n10\t10\n11\t12\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

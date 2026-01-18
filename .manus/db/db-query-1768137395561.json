@@ -1,0 +1,91 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "assessmentOptions"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "assessments"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "certificates"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "contactMessages"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "discussionLikes"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "discussionReplies"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "discussionTopics"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "engagementLogs"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "invitations"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "liveClassAttendance"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "liveClasses"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "moduleSections"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "modules"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "notifications"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "onboardingDocuments"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "patientAppointments"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "patients"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "profileAuditLog"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "sessions"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "userAssessmentResponses"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "userEducation"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "userEmployment"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "userModuleProgress"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "userSectionProgress"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "users"
+    },
+    {
+      "Tables_in_fVoseotjUQ8LNjLtvJk9rJ": "videoProgress"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_fVoseotjUQ8LNjLtvJk9rJ\n__drizzle_migrations\nassessmentOptions\nassessments\ncertificates\ncontactMessages\ndiscussionLikes\ndiscussionReplies\ndiscussionTopics\nengagementLogs\ninvitations\nliveClassAttendance\nliveClasses\nmoduleSections\nmodules\nnotifications\nonboardingDocuments\npatientAppointments\npatients\nprofileAuditLog\nsessions\nuserAssessmentResponses\nuserEducation\nuserEmployment\nuserModuleProgress\nuserSectionProgress\nusers\nvideoProgress\n",
+  "stderr": "",
+  "execution_time_ms": 550
+}

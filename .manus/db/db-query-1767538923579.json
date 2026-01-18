@@ -1,0 +1,59 @@
+{
+  "query": "SELECT id, openId, name, email, role FROM users WHERE email LIKE '%chrisb%' OR email LIKE '%soundbridge%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, openId, name, email, role FROM users WHERE email LIKE '%chrisb%' OR email LIKE '%soundbridge%';",
+  "rows": [
+    {
+      "id": "1",
+      "openId": "ehBu5fdeqNeRXXQzEyFFpu",
+      "name": "chrisb",
+      "email": "chrisb@soundbridgehealth.com",
+      "role": "admin"
+    },
+    {
+      "id": "120012",
+      "openId": "facilitator-1767489053829-1",
+      "name": "Dr. Sarah Martinez",
+      "email": "sarah.martinez@soundbridgehealth.com",
+      "role": "facilitator"
+    },
+    {
+      "id": "120013",
+      "openId": "facilitator-1767489053829-2",
+      "name": "Michael Chen",
+      "email": "michael.chen@soundbridgehealth.com",
+      "role": "facilitator"
+    },
+    {
+      "id": "120014",
+      "openId": "facilitator-1767489053829-3",
+      "name": "Emily Rodriguez",
+      "email": "emily.rodriguez@soundbridgehealth.com",
+      "role": "facilitator"
+    },
+    {
+      "id": "120015",
+      "openId": "facilitator-1767489053829-4",
+      "name": "James Thompson",
+      "email": "james.thompson@soundbridgehealth.com",
+      "role": "facilitator"
+    },
+    {
+      "id": "120016",
+      "openId": "facilitator-1767489053829-5",
+      "name": "Dr. Aisha Patel",
+      "email": "aisha.patel@soundbridgehealth.com",
+      "role": "facilitator"
+    },
+    {
+      "id": "120017",
+      "openId": "facilitator-1767489053829-6",
+      "name": "Robert Williams",
+      "email": "robert.williams@soundbridgehealth.com",
+      "role": "facilitator"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\topenId\tname\temail\trole\n1\tehBu5fdeqNeRXXQzEyFFpu\tchrisb\tchrisb@soundbridgehealth.com\tadmin\n120012\tfacilitator-1767489053829-1\tDr. Sarah Martinez\tsarah.martinez@soundbridgehealth.com\tfacilitator\n120013\tfacilitator-1767489053829-2\tMichael Chen\tmichael.chen@soundbridgehealth.com\tfacilitator\n120014\tfacilitator-1767489053829-3\tEmily Rodriguez\temily.rodriguez@soundbridgehealth.com\tfacilitator\n120015\tfacilitator-1767489053829-4\tJames Thompson\tjames.thompson@soundbridgehealth.com\tfacilitator\n120016\tfacilitator-1767489053829-5\tDr. Aisha Patel\taisha.patel@soundbridgehealth.com\tfacilitator\n120017\tfacilitator-1767489053829-6\tRobert Williams\trobert.williams@soundbridgehealth.com\tfacilitator\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

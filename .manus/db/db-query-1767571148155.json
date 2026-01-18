@@ -1,0 +1,64 @@
+{
+  "query": "SELECT id, moduleNumber, title, orderIndex FROM modules ORDER BY moduleNumber",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title, orderIndex FROM modules ORDER BY moduleNumber",
+  "rows": [
+    {
+      "id": "1",
+      "moduleNumber": "1",
+      "title": "Session 1: Introduction to SoundBridge Health",
+      "orderIndex": "1"
+    },
+    {
+      "id": "3",
+      "moduleNumber": "2",
+      "title": "Session 2: Music and the Brain",
+      "orderIndex": "3"
+    },
+    {
+      "id": "4",
+      "moduleNumber": "3",
+      "title": "Session 3: The SoundBridge Health Protocol",
+      "orderIndex": "4"
+    },
+    {
+      "id": "5",
+      "moduleNumber": "4",
+      "title": "Session 4: Building Therapeutic Playlists",
+      "orderIndex": "5"
+    },
+    {
+      "id": "6",
+      "moduleNumber": "5",
+      "title": "Session 5: Facilitating Group Sessions",
+      "orderIndex": "6"
+    },
+    {
+      "id": "7",
+      "moduleNumber": "6",
+      "title": "Session 6: Managing Patient Progress",
+      "orderIndex": "7"
+    },
+    {
+      "id": "8",
+      "moduleNumber": "7",
+      "title": "Session 7: Handling Difficult Situations",
+      "orderIndex": "8"
+    },
+    {
+      "id": "9",
+      "moduleNumber": "8",
+      "title": "Session 8: Documentation and Compliance",
+      "orderIndex": "9"
+    },
+    {
+      "id": "10",
+      "moduleNumber": "9",
+      "title": "Session 9: Certification and Next Steps",
+      "orderIndex": "10"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\torderIndex\n1\t1\tSession 1: Introduction to SoundBridge Health\t1\n3\t2\tSession 2: Music and the Brain\t3\n4\t3\tSession 3: The SoundBridge Health Protocol\t4\n5\t4\tSession 4: Building Therapeutic Playlists\t5\n6\t5\tSession 5: Facilitating Group Sessions\t6\n7\t6\tSession 6: Managing Patient Progress\t7\n8\t7\tSession 7: Handling Difficult Situations\t8\n9\t8\tSession 8: Documentation and Compliance\t9\n10\t9\tSession 9: Certification and Next Steps\t10\n",
+  "stderr": "",
+  "execution_time_ms": 63
+}

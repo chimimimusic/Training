@@ -1,0 +1,17 @@
+{
+  "query": "SELECT id, moduleNumber, title, description, youtubeVideoId FROM modules WHERE moduleNumber = 3",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2yuH9erWkhVRXY6.root --database fVoseotjUQ8LNjLtvJk9rJ --execute SELECT id, moduleNumber, title, description, youtubeVideoId FROM modules WHERE moduleNumber = 3",
+  "rows": [
+    {
+      "id": "4",
+      "moduleNumber": "3",
+      "title": "Session 3: The SoundBridge Health Protocol",
+      "description": "Detailed walkthrough of the 10-session protocol structure",
+      "youtubeVideoId": "fpLFg6j5neo"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tmoduleNumber\ttitle\tdescription\tyoutubeVideoId\n4\t3\tSession 3: The SoundBridge Health Protocol\tDetailed walkthrough of the 10-session protocol structure\tfpLFg6j5neo\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}
