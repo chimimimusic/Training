@@ -582,6 +582,16 @@ export const appRouter = router({
         await userManagement.hardDeleteUser(input.userId);
         return { success: true, message: 'User permanently deleted' };
       }),
+
+    changeUserRole: adminProcedure
+      .input(z.object({ 
+        userId: z.number(), 
+        newRole: z.enum(["admin", "instructor", "provider", "trainee", "facilitator"]) 
+      }))
+      .mutation(async ({ input }) => {
+        await userManagement.changeUserRole(input.userId, input.newRole);
+        return { success: true, message: `User role changed to ${input.newRole}` };
+      }),
     
     // Analytics endpoints
     traineeAnalytics: adminProcedure.query(async () => {

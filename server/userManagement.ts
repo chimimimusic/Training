@@ -156,3 +156,16 @@ export async function canDeleteUser(userId: number): Promise<{ canDelete: boolea
 
   return { canDelete: true };
 }
+
+/**
+ * Change user role (for promoting trainees to facilitators, etc.)
+ */
+export async function changeUserRole(userId: number, newRole: "admin" | "instructor" | "provider" | "trainee" | "facilitator") {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  await db.update(users).set({
+    role: newRole,
+    updatedAt: new Date(),
+  }).where(eq(users.id, userId));
+}

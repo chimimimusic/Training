@@ -34,7 +34,7 @@ export default function AdminDashboard() {
   const [, setLocation] = useLocation();
   const [actionDialog, setActionDialog] = useState<{
     open: boolean;
-    action: 'suspend' | 'activate' | 'softDelete' | 'hardDelete' | 'restore' | null;
+    action: 'suspend' | 'activate' | 'softDelete' | 'hardDelete' | 'restore' | 'promoteToFacilitator' | null;
     userId: number | null;
     userEmail: string;
   }>({ open: false, action: null, userId: null, userEmail: '' });
@@ -99,6 +99,17 @@ export default function AdminDashboard() {
       toast.error(error.message);
     },
   });
+
+  const changeRoleMutation = trpc.admin.changeUserRole.useMutation({
+    onSuccess: (data) => {
+      toast.success(data.message);
+      utils.admin.users.invalidate();
+      setActionDialog({ open: false, action: null, userId: null, userEmail: '' });
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
   
   const handleAction = () => {
     if (!actionDialog.userId) return;
@@ -118,6 +129,9 @@ export default function AdminDashboard() {
         break;
       case 'hardDelete':
         hardDeleteMutation.mutate({ userId: actionDialog.userId, confirmEmail: hardDeleteEmail });
+        break;
+      case 'promoteToFacilitator':
+        changeRoleMutation.mutate({ userId: actionDialog.userId, newRole: 'facilitator' });
         break;
     }
   };
@@ -272,6 +286,14 @@ export default function AdminDashboard() {
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator />
                               </>
+                                <DropdownMenuItem
+                                  onClick={() => setActionDialog({ open: true, action: 'promoteToFacilitator', userId: u.id, userEmail: u.email || '' })}
+                                  className="text-green-500"
+                                >
+                                  <UserCheck className="mr-2 h-4 w-4" />
+                                  Approve as Facilitator
+                                </DropdownMenuItem>
+                                <DropdownMenuSeparator />
                             )}
                             
                             {u.deletedAt ? (
@@ -380,6 +402,7 @@ export default function AdminDashboard() {
               {actionDialog.action === 'softDelete' && 'Delete User (Recoverable)'}
               {actionDialog.action === 'hardDelete' && 'Permanently Delete User'}
               {actionDialog.action === 'restore' && 'Restore User'}
+              {actionDialog.action === 'promoteToFacilitator' && 'Approve as Facilitator'}
             </AlertDialogTitle>
             <AlertDialogDescription>
               {actionDialog.action === 'suspend' && (
@@ -434,6 +457,13 @@ export default function AdminDashboard() {
                   <p className="text-green-500">The user will be visible again and able to log in.</p>
                 </div>
               )}
+              {actionDialog.action === 'promoteToFacilitator' && (
+                <div className="space-y-2">
+                  <p>Are you sure you want to approve this trainee as a facilitator?</p>
+                  <p className="text-sm">User: <span className="font-semibold">{actionDialog.userEmail}</span></p>
+                  <p className="text-green-500">They will gain facilitator privileges and access to patient sessions.</p>
+                </div>
+              )}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -458,6 +488,7 @@ export default function AdminDashboard() {
               {actionDialog.action === 'softDelete' && 'Delete'}
               {actionDialog.action === 'hardDelete' && 'Permanently Delete'}
               {actionDialog.action === 'restore' && 'Restore'}
+              {actionDialog.action === 'promoteToFacilitator' && 'Approve'}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
