@@ -285,7 +285,7 @@ export default function AdminDashboard() {
                                   View Progress
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator />
-                              </>
+                              
                                 <DropdownMenuItem
                                   onClick={() => setActionDialog({ open: true, action: 'promoteToFacilitator', userId: u.id, userEmail: u.email || '' })}
                                   className="text-green-500"
@@ -294,6 +294,7 @@ export default function AdminDashboard() {
                                   Approve as Facilitator
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator />
+                              </>
                             )}
                             
                             {u.deletedAt ? (
